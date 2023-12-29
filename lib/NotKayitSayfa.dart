@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notlar_uygulamasi/Notlardao.dart';
-import 'package:notlar_uygulamasi/main.dart';
+import 'package:notlar_uygulamasi/notes_page.dart';
 
 class NotKayitSayfa extends StatefulWidget {
   const NotKayitSayfa({super.key});
@@ -17,7 +17,7 @@ class _NotKayitSayfaState extends State<NotKayitSayfa> {
   Future<void> kayit(String ders_adi, int not1, int not2) async {
     await Notlardao().notEkle(ders_adi, not1, not2);
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => Anasayfa()));
+        context, MaterialPageRoute(builder: (context) => NotesPage()));
   }
 
   @override

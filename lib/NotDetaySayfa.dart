@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:notlar_uygulamasi/Notlar.dart';
 import 'package:notlar_uygulamasi/Notlardao.dart';
-import 'package:notlar_uygulamasi/main.dart';
+import 'package:notlar_uygulamasi/notes_page.dart';
+
 
 class NotDetaySayfa extends StatefulWidget {
   final Notlar not;
@@ -19,13 +20,13 @@ class _NotDetaySayfaState extends State<NotDetaySayfa> {
   Future<void> sil(int not_id) async {
     await Notlardao().notSil(not_id);
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => Anasayfa()));
+        context, MaterialPageRoute(builder: (context) => NotesPage()));
   }
 
   Future<void> guncelle(int not_id, String ders_adi, int not1, int not2) async {
     await Notlardao().notGuncelle(not_id, ders_adi, not1, not2);
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => Anasayfa()));
+        context, MaterialPageRoute(builder: (context) => NotesPage()));
   }
 
   @override
